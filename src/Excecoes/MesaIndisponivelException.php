@@ -26,18 +26,6 @@ class MesaIndisponivelException extends RestauranteException
         return new self(sprintf('A mesa %d não existe.', $numeroMesa));
     }
 
-    public function ocupar(){
-        
-    }
-
-    public function reservar(){
-
-    }
-
-    public function Restaurante::buscarMesa(){
-
-    }
-
     public function getTitulo(): string
     {
         return 'Mesa indisponível';
