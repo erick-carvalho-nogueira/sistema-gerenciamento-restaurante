@@ -7,7 +7,6 @@
  */
 
 declare(strict_types=1);
-
 class MesaIndisponivelException extends RestauranteException
 {
     /** Ex.: MesaIndisponivelException::mesaOcupada(5) → A mesa 5 está ocupada. */
@@ -24,6 +23,10 @@ class MesaIndisponivelException extends RestauranteException
     public static function mesaNaoExiste(int $numeroMesa): self
     {
         return new self(sprintf('A mesa %d não existe.', $numeroMesa));
+    }
+
+    public static function mesaNaoVazia(int $numeroMesa): self{
+        return new self(sprintf('A mesa %d já está ocupada por uma ou mais pessoas. Escolha uma outra mesa, por favor.', $numeroMesa));
     }
 
     public function getTitulo(): string
