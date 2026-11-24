@@ -1,0 +1,17 @@
+Fontes usadas no visual do sistema
+==================================
+
+Os arquivos .woff2 desta pasta são cópias locais das fontes abaixo, para o site abrir
+sem internet (por exemplo, no XAMPP). Todas são distribuídas pelo Google Fonts sob a
+SIL Open Font License, versão 1.1 (https://openfontlicense.org), que permite usar,
+copiar e redistribuir as fontes, inclusive em projetos de terceiros.
+
+  Alfa Slab One      AlfaSlabOne-400.woff2
+  Barlow Condensed   BarlowCondensed-500.woff2, BarlowCondensed-600.woff2, BarlowCondensed-700.woff2
+  Caveat             Caveat-variavel.woff2 (uma só fonte variável, pesos 400 a 700)
+  Courier Prime      CourierPrime-400.woff2, CourierPrime-700.woff2
+
+Autoria e licença de cada uma: https://fonts.google.com/specimen/Alfa+Slab+One ,
+https://fonts.google.com/specimen/Barlow+Condensed , https://fonts.google.com/specimen/Caveat
+e https://fonts.google.com/specimen/Courier+Prime (os direitos autorais continuam sendo dos
+respectivos autores, "The ... Project Authors").
