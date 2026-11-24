@@ -29,7 +29,6 @@ class Sobremesa extends ItemCardapio
         $this->setServidaGelada($servidaGelada);
     }
 
-    /** Monta uma Sobremesa a partir de um array (formulário ou JSON). Usado pela ItemCardapioFactory. */
     public static function deArray(array $dados): self
     {
         $sobremesa = new self(
@@ -43,8 +42,6 @@ class Sobremesa extends ItemCardapio
         self::aplicarDadosComuns($sobremesa, $dados);
         return $sobremesa;
     }
-
-    // implementação do contrato de ItemCardapio
 
     public function getTipo(): string
     {
@@ -66,7 +63,6 @@ class Sobremesa extends ItemCardapio
         return self::TEMPO_PREPARO;
     }
 
-    /** Sobremesa: a cada LEVE unidades, (LEVE - PAGUE) saem de graça (ex.: leve 3, pague 2). */
     public function calcularPreco(int $quantidade): float
     {
         $this->exigirQuantidadeValida($quantidade);
@@ -91,8 +87,6 @@ class Sobremesa extends ItemCardapio
             'servida_gelada' => $this->servidaGelada,
         ];
     }
-
-    // getters e setters próprios
 
     public function getCalorias(): int
     {

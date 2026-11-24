@@ -1,9 +1,7 @@
-# Dados gerados em tempo de execução (o sistema recria o arquivo, com dados de exemplo, se ele não existir)
 /data/*.json
 /data/*.tmp
 /data/*.bak
 
-# Editores e sistema operacional
 .vscode/
 .idea/
 *.swp

@@ -8,9 +8,5 @@ declare(strict_types=1);
 
 interface Persistivel
 {
-    /**
-     * Devolve o estado do objeto apenas com tipos simples (string, int, float, bool, array/null),
-     * pronto para a camada de armazenamento gravar em JSON.
-     */
     public function toArray(): array;
 }

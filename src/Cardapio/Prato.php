@@ -31,7 +31,6 @@ class Prato extends ItemCardapio
         $this->setVegetariano($vegetariano);
     }
 
-    /** Monta um Prato a partir de um array (formulário ou JSON). Usado pela ItemCardapioFactory. */
     public static function deArray(array $dados): self
     {
         $prato = new self(
@@ -46,8 +45,6 @@ class Prato extends ItemCardapio
         self::aplicarDadosComuns($prato, $dados);
         return $prato;
     }
-
-    // implementação do contrato de ItemCardapio
 
     public function getTipo(): string
     {
@@ -69,7 +66,6 @@ class Prato extends ItemCardapio
         return $this->tempoPreparo;
     }
 
-    /** Prato: sem promoção, paga-se o preço cheio de cada unidade. */
     public function calcularPreco(int $quantidade): float
     {
         $this->exigirQuantidadeValida($quantidade);
@@ -100,8 +96,6 @@ class Prato extends ItemCardapio
             'vegetariano' => $this->vegetariano,
         ];
     }
-
-    // getters e setters próprios
 
     public function setTempoPreparo(int $minutos): void
     {

@@ -16,21 +16,15 @@ final class Config
     public const CHAVE_PIX = '00000000-0000-4000-8000-000000000000';
     public const MODO_DEBUG = true;
 
-    /** Classe utilitária: só tem membros estáticos, por isso não pode ser instanciada. */
     private function __construct()
     {
     }
 
-    /** Pasta raiz do projeto (dois níveis acima de src/Infra). */
     public static function raiz(): string
     {
         return dirname(__DIR__, 2);
     }
 
-    /**
-     * Caminho do arquivo JSON com os dados do restaurante.
-     * Pode ser trocado pela variável de ambiente RESTAURANTE_DADOS (usada pelos testes automatizados).
-     */
     public static function caminhoDados(): string
     {
         $caminhoAlternativo = getenv(self::VARIAVEL_AMBIENTE_DADOS);
@@ -40,7 +34,6 @@ final class Config
         return self::raiz() . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . self::ARQUIVO_DADOS;
     }
 
-    /** Aplica fuso horário, codificação e relatório de erros da aplicação web. */
     public static function aplicarAmbiente(): void
     {
         date_default_timezone_set(self::FUSO_HORARIO);

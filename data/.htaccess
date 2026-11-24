@@ -1,4 +1,3 @@
-# Bloqueia o acesso direto pelo navegador: estes arquivos são lidos apenas pelo PHP.
 <IfModule mod_authz_core.c>
     Require all denied
 </IfModule>

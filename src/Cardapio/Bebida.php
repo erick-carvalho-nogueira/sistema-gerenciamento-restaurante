@@ -33,7 +33,6 @@ class Bebida extends ItemCardapio
         $this->setGelada($gelada);
     }
 
-    /** Monta uma Bebida a partir de um array (formulário ou JSON). Usado pela ItemCardapioFactory. */
     public static function deArray(array $dados): self
     {
         $bebida = new self(
@@ -48,8 +47,6 @@ class Bebida extends ItemCardapio
         self::aplicarDadosComuns($bebida, $dados);
         return $bebida;
     }
-
-    // implementação do contrato de ItemCardapio
 
     public function getTipo(): string
     {
@@ -71,7 +68,6 @@ class Bebida extends ItemCardapio
         return self::TEMPO_PREPARO;
     }
 
-    /** Bebida: a partir de QTD_ATACADO unidades todo o consumo ganha DESCONTO_ATACADO. */
     public function calcularPreco(int $quantidade): float
     {
         $this->exigirQuantidadeValida($quantidade);
@@ -104,8 +100,6 @@ class Bebida extends ItemCardapio
             'gelada' => $this->gelada,
         ];
     }
-
-    // getters e setters próprios
 
     public function getVolumeMl(): int
     {

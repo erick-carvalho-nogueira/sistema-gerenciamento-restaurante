@@ -7,11 +7,10 @@
 declare(strict_types=1);
 
 spl_autoload_register(static function (string $classe): void {
-    // Cada pasta de src/ agrupa um módulo do sistema; o arquivo tem o mesmo nome da classe.
     static $pastas = ['Contratos', 'Excecoes', 'Cardapio', 'Funcionarios', 'Pedidos', 'Pagamentos', 'Infra'];
 
     if (preg_match('/^[A-Za-z_][A-Za-z0-9_]*$/', $classe) !== 1) {
-        return; // nomes com namespace ou caminho não pertencem a este sistema
+        return;
     }
 
     foreach ($pastas as $pasta) {

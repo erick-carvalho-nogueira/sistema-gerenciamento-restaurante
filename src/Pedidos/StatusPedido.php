@@ -24,25 +24,21 @@ final class StatusPedido
         self::CANCELADO => 'Cancelado',
     ];
 
-    /** Etapas que avancarStatus() percorre; de ENTREGUE em diante só o pagamento (ou o cancelamento) muda o status. */
     private const FLUXO = [
         self::ABERTO => self::EM_PREPARO,
         self::EM_PREPARO => self::PRONTO,
         self::PRONTO => self::ENTREGUE,
     ];
 
-    /** Classe utilitária: só tem membros estáticos, por isso não pode ser instanciada. */
     private function __construct()
     {
     }
 
-    /** @return string[] todos os status possíveis */
     public static function todos(): array
     {
         return array_keys(self::ROTULOS);
     }
 
-    /** @return string[] etapas do fluxo normal, na ordem (usadas na barra de progresso) */
     public static function etapasDoFluxo(): array
     {
         return [self::ABERTO, self::EM_PREPARO, self::PRONTO, self::ENTREGUE, self::PAGO];
@@ -58,13 +54,11 @@ final class StatusPedido
         return self::ROTULOS[$status] ?? $status;
     }
 
-    /** Próximo status do fluxo, ou null quando não há (entregue, pago ou cancelado). */
     public static function proximo(string $status): ?string
     {
         return self::FLUXO[$status] ?? null;
     }
 
-    /** Pedido pago ou cancelado não aceita mais nenhuma alteração. */
     public static function estaFinalizado(string $status): bool
     {
         return $status === self::PAGO || $status === self::CANCELADO;

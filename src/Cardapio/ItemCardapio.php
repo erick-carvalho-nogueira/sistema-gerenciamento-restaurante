@@ -13,7 +13,6 @@ abstract class ItemCardapio implements Persistivel
     public const TAMANHO_MAXIMO_NOME = 60;
     public const TAMANHO_MAXIMO_DESCRICAO = 160;
 
-    /** Membro estático com propósito real: contador de instâncias de itens criadas na execução. */
     private static int $totalInstancias = 0;
 
     private ?int $id;
@@ -31,32 +30,21 @@ abstract class ItemCardapio implements Persistivel
         self::$totalInstancias++;
     }
 
-    // Contrato: cada subclasse responde do seu jeito (polimorfismo)
-
-    /** Identificador curto do tipo, usado no JSON e nas Factories (ex.: "prato"). */
     abstract public function getTipo(): string;
 
-    /** Nome legível da categoria (ex.: "Sobremesa"). */
     abstract public function getCategoria(): string;
 
-    /** Setor que prepara o item: Cozinha, Bar ou Confeitaria. */
     abstract public function getSetorPreparo(): string;
 
     abstract public function getTempoPreparoMinutos(): int;
 
-    /** Valor a cobrar por $quantidade unidades — cada tipo aplica a sua própria regra. */
     abstract public function calcularPreco(int $quantidade): float;
 
-    /** Frase curta com a regra de preço do tipo (exibida na interface). */
     abstract public function getRegraDePreco(): string;
 
-    /** Detalhes próprios do tipo em uma linha (ex.: "serve 2 pessoas, 35 min de preparo"). */
     abstract public function getDetalhes(): string;
 
-    /** Campos próprios do tipo que entram no JSON. */
     abstract protected function dadosEspecificos(): array;
-
-    // Comportamento comum, herdado por todas as subclasses
 
     public function descrever(): string
     {
@@ -81,7 +69,6 @@ abstract class ItemCardapio implements Persistivel
         ], $this->dadosEspecificos());
     }
 
-    /** Usado pelas subclasses no início de calcularPreco(). */
     protected function exigirQuantidadeValida(int $quantidade): void
     {
         if ($quantidade < 1) {
@@ -89,7 +76,6 @@ abstract class ItemCardapio implements Persistivel
         }
     }
 
-    /** Lê o código (id) do array, se existir; usado pelos deArray() das subclasses. */
     protected static function lerId(array $dados): ?int
     {
         if (!isset($dados['id']) || $dados['id'] === '') {
@@ -98,7 +84,6 @@ abstract class ItemCardapio implements Persistivel
         return Util::paraInt($dados['id'], 'código');
     }
 
-    /** Aplica ao item recém-criado os campos comuns que não vão no construtor. */
     protected static function aplicarDadosComuns(ItemCardapio $item, array $dados): void
     {
         if (array_key_exists('disponivel', $dados)) {
@@ -106,14 +91,11 @@ abstract class ItemCardapio implements Persistivel
         }
     }
 
-    // Getters e setters (encapsulamento: os atributos não são públicos)
-
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /** O código só pode ser definido uma vez (quando o item entra no cardápio). */
     public function definirId(int $id): void
     {
         if ($this->id !== null) {
@@ -192,7 +174,6 @@ abstract class ItemCardapio implements Persistivel
         $this->disponivel = $disponivel;
     }
 
-    /** Quantos itens de cardápio já foram instanciados nesta execução (membro estático). */
     public static function getTotalInstancias(): int
     {
         return self::$totalInstancias;

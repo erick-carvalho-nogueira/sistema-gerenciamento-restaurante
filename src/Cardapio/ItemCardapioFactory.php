@@ -8,12 +8,10 @@ declare(strict_types=1);
 
 final class ItemCardapioFactory
 {
-    /** Classe utilitária: só tem métodos estáticos, por isso não pode ser instanciada. */
     private function __construct()
     {
     }
 
-    /** @return array<string, string> tipo => nome legível, na ordem em que aparecem no cardápio */
     public static function tiposDisponiveis(): array
     {
         return [
@@ -23,11 +21,6 @@ final class ItemCardapioFactory
         ];
     }
 
-    /**
-     * Cria o item do tipo pedido a partir de um array de dados (campos do formulário ou do JSON).
-     *
-     * @throws DadosInvalidosException quando o tipo é desconhecido ou algum dado é inválido
-     */
     public static function criar(string $tipo, array $dados): ItemCardapio
     {
         switch (strtolower(trim($tipo))) {
