@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Arquivo: ilustracoes.svg
+  Responsável: Erik Carvalho Nogueira (RA 2026106090008)
+  Descrição: ícones desenhados para o sistema (traço grosso e redondo), usados com <use href="assets/ilustracoes.svg#nome">.
+             A cor e a espessura do traço vêm do CSS (.ico), por isso aqui não há cores.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">
+  <title>Ilustrações do Canto do Zé</title>
+
+  <symbol id="copo" viewBox="0 0 48 48"><path d="M12 8 L36 8 L32 42 L16 42 Z"/><path d="M14 19 H34"/></symbol>
+
+  <symbol id="prato" viewBox="0 0 48 48"><circle cx="22" cy="26" r="15"/><circle cx="22" cy="26" r="8"/><path d="M43 8 V40 M43 8 Q38 14 39 22 H43"/></symbol>
+
+  <symbol id="garrafa" viewBox="0 0 48 48"><path d="M20 4 H28 V12 Q34 16 34 24 V42 Q34 44 32 44 H16 Q14 44 14 42 V24 Q14 16 20 12 Z"/><path d="M14 29 H34"/></symbol>
+
+  <symbol id="panela" viewBox="0 0 48 48"><path d="M8 20 H40 V34 Q40 40 34 40 H14 Q8 40 8 34 Z"/><path d="M3 23 H8 M40 23 H45"/><path d="M15 20 Q15 11 24 11 Q33 11 33 20"/></symbol>
+
+  <symbol id="cadeira" viewBox="0 0 48 48"><path d="M14 5 V27 M34 5 V27 M14 12 H34 M10 27 H38 M14 27 V43 M34 27 V43"/></symbol>
+
+  <symbol id="comanda" viewBox="0 0 48 48"><path d="M10 4 H38 V44 L33 40 L28 44 L24 40 L19 44 L14 40 L10 44 Z"/><path d="M16 14 H32 M16 22 H32 M16 30 H26"/></symbol>
+
+  <symbol id="peixe" viewBox="0 0 48 48"><path d="M6 24 Q16 10 30 14 Q38 18 40 24 Q38 30 30 34 Q16 38 6 24 Z"/><path d="M40 24 L46 16 M40 24 L46 32"/><circle cx="14" cy="22" r="1.6" fill="currentColor" stroke="none"/></symbol>
+
+  <symbol id="tigela" viewBox="0 0 48 48"><path d="M6 24 H42 Q40 40 24 42 Q8 40 6 24 Z"/><path d="M13 24 Q13 14 21 14 Q22 8 28 10 Q35 10 35 24"/><path d="M39 5 L32 18"/></symbol>
+
+  <symbol id="chapeu" viewBox="0 0 48 48"><path d="M13 30 V41 H35 V30"/><path d="M13 30 Q4 29 6 21 Q8 14 15 16 Q17 7 25 8 Q33 7 34 15 Q42 14 42 22 Q43 30 35 30 Z"/><path d="M13 36 H35"/></symbol>
+
+  <symbol id="moeda" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M30 18 Q25 13 20 17 Q16 22 24 24 Q32 26 28 31 Q24 36 18 31 M24 10 V38"/></symbol>
+
+  <symbol id="relogio" viewBox="0 0 48 48"><circle cx="24" cy="26" r="16"/><path d="M24 15 V26 L31 31 M19 5 H29"/></symbol>
+
+  <symbol id="sino" viewBox="0 0 48 48"><path d="M9 34 Q9 15 24 13 Q39 15 39 34 Z"/><path d="M5 39 H43 M24 13 V8 M19 8 H29"/></symbol>
+
+  <symbol id="lapis" viewBox="0 0 48 48"><path d="M9 39 L11 30 L31 10 L38 17 L18 37 Z"/><path d="M27 14 L34 21 M11 30 L18 37"/></symbol>
+</svg>
